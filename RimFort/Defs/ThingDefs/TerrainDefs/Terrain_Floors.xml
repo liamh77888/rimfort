@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TerrainDefs>
+
+
+  <TerrainDef Name="FloorBase" Abstract="True">
+    <layerable>true</layerable>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+      <li>SmoothHard</li>
+    </affordances>
+    <statBases>
+      <WorkToBuild>135</WorkToBuild>
+    </statBases>
+    <designationCategory>Floors</designationCategory>
+    <Fertility>1.5</Fertility> <!-- this is very clumsy, needs to be fixed-->
+    <constructEffect>ConstructDirt</constructEffect>
+    <AcceptTerrainSourceFilth>false</AcceptTerrainSourceFilth>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+  </TerrainDef>
+
+  
+
+  <!-- ================= Misc ================= -->
+
+  <TerrainDef ParentName="FloorBase">
+    <DefName>GrowTile</DefName>
+    <label>growth tile</label>
+    <RenderPrecedence>240</RenderPrecedence>
+    <Description>A special tile used for growing plants underground.</Description>
+    <texturePath>Terrain/Surfaces/GrowTile</texturePath>
+    <statBases>
+      <Beauty>0</Beauty>
+      <WorkToBuild>100</WorkToBuild>
+    </statBases>
+    <CostList>
+      <Steel>1</Steel>
+	  <WoodLog>1</WoodLog>
+    </CostList>
+    <constructEffect>ConstructMetal</constructEffect>
+   <!-- <designationHotkey>Misc13</designationHotkey> note to self: define "Misc13" as a hotkey; the error spam because of this was getting annoying -->
+  </TerrainDef>
+  
+  
+</TerrainDefs>

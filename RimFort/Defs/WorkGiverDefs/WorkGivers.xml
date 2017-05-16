@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<WorkGivers>
+
+	<WorkGiverDef>
+		<defName>WG_Extract</defName>
+		<label>Extract</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Cooking</workType>
+		<emergency>false</emergency>
+		<verb>using</verb>
+		<gerund>extracting with</gerund>
+		<priorityInType>1</priorityInType>
+		<fixedBillGiverDefs>
+			<li>EXTable</li>
+		</fixedBillGiverDefs>
+	</WorkGiverDef>
+	
+</WorkGivers>

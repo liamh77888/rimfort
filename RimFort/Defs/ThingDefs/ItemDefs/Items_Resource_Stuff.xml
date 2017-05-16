@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--=============== Pure stuffs: Basics ====================-->
+
+
+  
+
+ <ThingDef ParentName="ResourceBase">
+    <defName>Adamantine</defName>
+    <label>adamantine</label>
+    <description>Raw adamantine! Praise the miners!</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Stuff/Adamantine</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <MarketValue>50</MarketValue>
+      <Mass>0.01</Mass>
+      <SharpDamageMultiplier>5.0</SharpDamageMultiplier>
+      <BluntDamageMultiplier>0.1</BluntDamageMultiplier>
+    </statBases>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <deepCommonality>1</deepCommonality>
+    <stuffProps>
+      <categories>
+        <li>Metallic</li>
+      </categories>
+      <color>142,255,253</color>
+	  <commonality>0.25</commonality>
+      <constructEffect>ConstructMetal</constructEffect>
+      <soundImpactStuff>BulletImpactMetal</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <statFactors>
+        <MaxHitPoints>2.8</MaxHitPoints>
+        <Beauty>1.2</Beauty>
+        <Flammability>0.2</Flammability>
+        <WorkToMake>2.2</WorkToMake>
+				<WorkToBuild>2.2</WorkToBuild>
+        <MeleeWeapon_Cooldown>0.4</MeleeWeapon_Cooldown>
+      </statFactors>
+      <smeltable>true</smeltable>
+    </stuffProps>
+  </ThingDef>
+
+
+  <!--=============== Pure stuffs: Fabric, leather, etc  ====================-->
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Cloth</defName>
+    <label>cloth</label>
+    <description>Cloth woven from organic fibers.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Cloth</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(162,157,152)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>2.8</MarketValue>
+      <Mass>0.026</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>4</DeteriorationRate>
+    </statBases>
+    <stuffProps>
+      <categories>
+        <li>Fabric</li>
+      </categories>
+      <color>(162,157,152)</color>
+      <commonality>1.4</commonality>
+      <allowColorGenerators>true</allowColorGenerators>
+    </stuffProps>
+    <thingCategories>
+      <li>Textiles</li>
+    </thingCategories>
+    <comps>
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+    </comps>
+    <colorGeneratorInTraderStock Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>5</weight>
+          <only>RGBA(0.33,0.33,0.33,1)</only>
+        </li>
+        <li>
+          <weight>10</weight>
+          <min>RGBA(0.3,0.3,0.3,1)</min>
+          <max>RGBA(0.9,0.9,0.9,1)</max>
+        </li>
+        <li>
+          <weight>5</weight>
+          <only>RGBA(0.9,0.9,0.9,1)</only>
+        </li>
+      </options>
+    </colorGeneratorInTraderStock>
+  </ThingDef>
+
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Synthread</defName>
+    <label>synthread</label>
+    <description>Spacer-tech synthetic fabric designed for making ordinary clothes. It is soft, light, strong, and insulates well.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Synthread</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <MarketValue>7</MarketValue>
+      <Mass>0.025</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>3</DeteriorationRate>
+    </statBases>
+    <stuffProps>
+      <categories>
+        <li>Fabric</li>
+      </categories>
+      <commonality>0.25</commonality>
+      <color>(174,219,228)</color>
+      <statOffsets>
+        <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
+        <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
+        <ArmorRating_Heat>0.03</ArmorRating_Heat>
+        <ArmorRating_Electric>0.03</ArmorRating_Electric>
+      </statOffsets>
+      <statFactors>
+        <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+        <ArmorRating_Sharp>1.65</ArmorRating_Sharp>
+        <ArmorRating_Heat>4.0</ArmorRating_Heat>
+        <ArmorRating_Electric>4.0</ArmorRating_Electric>
+        <Insulation_Cold>1.25</Insulation_Cold>
+        <Insulation_Heat>1.25</Insulation_Heat>
+      </statFactors>
+    </stuffProps>
+    <thingCategories>
+      <li>Textiles</li>
+    </thingCategories>
+  </ThingDef>
+
+
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DevilstrandCloth</defName>
+    <label>devilstrand</label>
+    <description>Fabric spun from microfibers extracted from silk-producing Devilstrand mushrooms. Very tough, but insulates no better than cloth.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Cloth</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(180,60,60)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>10</MarketValue>
+      <Mass>0.032</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>3</DeteriorationRate>
+    </statBases>
+    <stuffProps>
+      <categories>
+        <li>Fabric</li>
+      </categories>
+      <commonality>0.35</commonality>
+      <color>(180,60,60)</color>
+      <statOffsets>
+        <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+        <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+        <ArmorRating_Heat>0</ArmorRating_Heat>
+        <ArmorRating_Electric>0.05</ArmorRating_Electric>
+      </statOffsets>
+      <statFactors>
+        <WorkToMake>1.3</WorkToMake>
+        <ArmorRating_Blunt>1.3</ArmorRating_Blunt>
+        <ArmorRating_Sharp>1.8</ArmorRating_Sharp>
+        <ArmorRating_Heat>1</ArmorRating_Heat>
+        <ArmorRating_Electric>3</ArmorRating_Electric>
+      </statFactors>
+    </stuffProps>
+    <thingCategories>
+      <li>Textiles</li>
+    </thingCategories>
+    <comps>
+      <li>
+        <compClass>CompColorable</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Hyperweave</defName>
+    <label>hyperweave</label>
+    <description>High-tech nano-fibers woven into sheets. It is somewhat heavy, but is incredibly difficult to break. The secrets of its production are known only to the most advanced glitterworld cultures.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Hyperweave</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>16</MarketValue>
+      <Mass>0.038</Mass>
+      <Flammability>1.0</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+    <stuffProps>
+      <categories>
+        <li>Fabric</li>
+      </categories>
+      <commonality>0.18</commonality>
+      <color>(0,106,126)</color>
+      <statOffsets>
+        <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
+        <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
+        <ArmorRating_Heat>0.03</ArmorRating_Heat>
+      </statOffsets>
+      <statFactors>
+        <WorkToMake>1.8</WorkToMake>
+        <ArmorRating_Blunt>1.6</ArmorRating_Blunt>
+        <ArmorRating_Sharp>4.0</ArmorRating_Sharp>
+        <ArmorRating_Heat>2.0</ArmorRating_Heat>
+        <ArmorRating_Electric>0</ArmorRating_Electric>
+        <Insulation_Cold>1.1</Insulation_Cold>
+        <Insulation_Heat>1.1</Insulation_Heat>
+      </statFactors>
+    </stuffProps>
+    <thingCategories>
+      <li>Textiles</li>
+    </thingCategories>
+  </ThingDef>
+
+  <!--=====================================================================-->
+  <!--=============================== Wool ================================-->
+  <!--=====================================================================-->
+
+  <ThingDef ParentName="ResourceBase" Name="WoolBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Resource/Wool</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>90</MaxHitPoints>
+      <MarketValue>3.0</MarketValue>
+      <Mass>0.028</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>3.4</DeteriorationRate>
+    </statBases>
+    <stackLimit>100</stackLimit>
+    <stuffProps>
+      <categories>
+        <li>Fabric</li>
+      </categories>
+      <commonality>0.15</commonality>
+      <statFactors>
+        <ArmorRating_Electric>1.2</ArmorRating_Electric>
+      </statFactors>
+    </stuffProps>
+    <thingCategories>
+      <li>Textiles</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="WoolBase">
+    <defName>MegaslothWool</defName>
+    <label>Megasloth wool</label>
+    <description>While somewhat coarse, megasloth wool's long fibers make it very strong. It is very warm.</description>
+    <graphicData>
+      <color>(189,161,116)</color>
+    </graphicData>
+    <stuffProps>
+      <color>(189,161,116)</color>
+      <commonality>0.15</commonality>
+      <statOffsets>
+        <ArmorRating_Heat>0.08</ArmorRating_Heat>
+        <ArmorRating_Electric>0.02</ArmorRating_Electric>
+      </statOffsets>
+      <statFactors>
+        <ArmorRating_Sharp>1.3</ArmorRating_Sharp>
+        <ArmorRating_Heat>2.2</ArmorRating_Heat>
+        <Insulation_Cold>3.1</Insulation_Cold>
+        <Insulation_Heat>3.1</Insulation_Heat>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+
+  <ThingDef ParentName="WoolBase">
+    <defName>MuffaloWool</defName>
+    <label>muffalo wool</label>
+    <description>Soft, light and provides very good insulation. Wool clothes can keep the body warm even in extreme conditions.</description>
+    <graphicData>
+      <color>(179,192,186)</color>
+    </graphicData>
+    <stuffProps>
+      <color>(179,192,186)</color>
+      <commonality>0.15</commonality>
+      <statOffsets>
+        <ArmorRating_Heat>0.08</ArmorRating_Heat>
+        <ArmorRating_Electric>0.02</ArmorRating_Electric>
+      </statOffsets>
+      <statFactors>
+        <ArmorRating_Sharp>1.1</ArmorRating_Sharp>
+        <ArmorRating_Heat>2.2</ArmorRating_Heat>
+        <Insulation_Cold>3.0</Insulation_Cold>
+        <Insulation_Heat>3.0</Insulation_Heat>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+
+  <ThingDef ParentName="WoolBase">
+    <defName>CamelHair</defName>
+    <label>camelhair</label>
+    <description>Camelhair clothing is usually worn by desert travelers to protect them from the heat. It provides excellent insulation due to its thermostatic properties.</description>
+    <graphicData>
+      <color>(220,179,132)</color>
+    </graphicData>
+    <stuffProps>
+      <color>(220,179,132)</color>
+      <commonality>0.15</commonality>
+      <statOffsets>
+        <ArmorRating_Heat>0.17</ArmorRating_Heat>
+        <ArmorRating_Electric>0.02</ArmorRating_Electric>
+      </statOffsets>
+      <statFactors>
+        <ArmorRating_Sharp>1.1</ArmorRating_Sharp>
+        <ArmorRating_Heat>2.5</ArmorRating_Heat>
+        <Insulation_Cold>2.8</Insulation_Cold>
+        <Insulation_Heat>3.6</Insulation_Heat>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+  
+  <ThingDef ParentName="WoolBase">
+    <defName>AlpacaWool</defName>
+    <label>alpaca wool</label>
+    <description>The remarkably soft wool of an alpaca. It is very warm.</description>
+    <graphicData>
+      <color>(237,216,174)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>6.0</MarketValue>
+      <DeteriorationRate>2.6</DeteriorationRate>
+    </statBases>
+    <stuffProps>
+      <color>(180,148,109)</color>
+      <commonality>0.15</commonality>
+      <statOffsets>
+        <ArmorRating_Heat>0.05</ArmorRating_Heat>
+      </statOffsets>
+      <statFactors>
+        <ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+        <ArmorRating_Heat>1.8</ArmorRating_Heat>
+        <Insulation_Cold>2.9</Insulation_Cold>
+        <Insulation_Heat>3.4</Insulation_Heat>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+  
+</Defs>

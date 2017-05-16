@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RecipeDefs>
+
+  <RecipeDef>
+    <defName>ExtractGoldSalve</defName>
+    <label>extract golden salve</label>
+    <description>Use heat and strong electromagnets to separate useful metal from slag chunks.</description>
+    <jobString>Extracting golden salve from valley herbs.</jobString>
+    <workAmount>-1</workAmount>
+    <workSpeedStat>BrewingSpeed</workSpeedStat>
+    <workSkill>Cooking</workSkill>
+	<effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Brewing</soundWorking>
+    <recipeUsers>
+		<li>EXTable</li>
+	</recipeUsers>
+	<ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ValleyHerbLeaf</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <GoldSalve>5</GoldSalve>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ValleyHerbLeaf</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+</RecipeDefs>
