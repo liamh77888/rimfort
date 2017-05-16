@@ -8,4 +8,4 @@ To Do List:
 6. Add Niconite
 7. Try very hard to balance everything (and fail)
 8. ??? (more Mechanoids, anyone?)
-9. Better art (ha!)
+9001. Better art (ha!)
